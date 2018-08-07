@@ -42,20 +42,22 @@ $(document).ready(function() {
     //
     var alien = new alienMakerFunction(250, 210, 1000);
     let firstAlienTop = 140;
-    let firstAlienLeft = 110;
+    let firstAlienLeft = 120;
 
     var player = new playerShipMakerFunction(690, 440, 1000);
     $('#gameScreen').append(player.$node);
 
     for(let i = 0; i < 4; i++) {
-      let firstAlien = new alienMakerFunction(firstAlienTop, firstAlienLeft, 1000);
+      let firstAlien = new alienMakerFunction(firstAlienTop, firstAlienLeft, 50);
       $('#gameScreen').append(firstAlien.$node);
 
-      // let secondAlien = new alienMakerFunction(firstAlienTop + 50, firstAlienLeft + 350, 1000);
-      // $('#gameScreen').append(secondAlien.$node);
+      let secondAlien = new alienMakerFunction(firstAlienTop + 60, firstAlienLeft + 260, 50);
+      $('#gameScreen').append(secondAlien.$node);
       firstAlienLeft += 100;
     }
-    window.firstAlienRow = 450;
+    window.firstAlienRow = 200;
+    window.stepRight = true;
+
   });
 });
   // make character at the bottom of the screen upon the same event as alien

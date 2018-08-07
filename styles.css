@@ -28,7 +28,7 @@ body, a:link, a:visited, a:active{
 .space-invader {
   border: 2px solid #fff;
   background-color: #fff;
-  float: left;
+  /*float: left;*/
   width: 0.25em;
   height: 0.25em;
   margin: 40px 40px;
