@@ -29,4 +29,17 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
+
+  // make alien
+  $('.spaceInvaderButton').on('click', function(event) {
+    var alienMakerFunctionName = $(this).data('alien-maker-function-name');
+    var alienMakerFunction = window[alienMakerFunctionName];
+
+    var alien = new alienMakerFunction(
+      200, 200, 1000
+    );
+    // alien.css('.space-invader');
+    $('body').append(alien.$node);
+  });
+
 });

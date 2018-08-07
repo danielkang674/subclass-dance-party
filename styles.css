@@ -5,11 +5,12 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("SpaceBackground.jpg");
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .spaceInvaderButton {
   padding:5px 12px;
   float:right;
 }
@@ -24,4 +25,44 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.space-invader {
+  border: 2px solid #fff;
+  background-color: #fff;
+  float: left;
+  width: 0.25em;
+  height: 0.25em;
+  margin: 40px 40px;
+}
+.space-invader-ufo {
+  box-shadow:
+    /* Body */
+    -.25em -.625em 0 .125em #fff,
+    .25em -.625em 0 .125em #fff,
+    -.25em -.375em 0 .125em #fff,
+    -.75em -.375em 0 .125em #fff,
+    -1em -.375em 0 .125em #fff,
+    .25em -.375em 0 .125em #fff,
+    .75em -.375em 0 .125em #fff,
+    1em -.375em 0 .125em #fff,
+    0 .125em 0 .125em #fff,
+    -.75em .125em 0 .125em #fff,
+    .75em .125em 0 .125em #fff,
+    -.375em .25em 0 0 #fff,
+    -1.125em .25em 0 0 #fff,
+    .375em .25em 0 0 #fff,
+    1.125em .25em 0 0 #fff,
+    1.375em -.25em 0 0 #fff,
+    1.5em .125em 0 .125em #fff,
+    1.875em .25em 0 0 #fff,
+    -1.375em -.25em 0 0 #fff,
+    -1.5em .125em 0 .125em #fff,
+    -1.875em .25em 0 0 #fff,
+    0 .375em 0 .125em #fff,
+    1.25em .375em 0 .125em #fff,
+    1em .375em 0 .125em #fff,
+    1.125em .75em 0 0 #fff,
+    -1.25em .375em 0 .125em #fff,
+    -1em .375em 0 .125em #fff,
+    -1.125em .75em 0 0 #fff;
 }
