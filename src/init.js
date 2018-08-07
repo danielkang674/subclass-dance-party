@@ -32,14 +32,30 @@ $(document).ready(function() {
 
   // make alien
   $('.spaceInvaderButton').on('click', function(event) {
+    // calls upon the function within the html element
     var alienMakerFunctionName = $(this).data('alien-maker-function-name');
-    var alienMakerFunction = window[alienMakerFunctionName];
+    // calls upon the window object with the stringed key of our Alien and playerShip functions
+    var gameFunctionArray = alienMakerFunctionName.split(" ");
+    var alienMakerFunction = window[gameFunctionArray[0]];
+    var playerShipMakerFunction = window[gameFunctionArray[1]];
 
-    var alien = new alienMakerFunction(
-      200, 200, 1000
-    );
-    // alien.css('.space-invader');
-    $('body').append(alien.$node);
+    //
+    var alien = new alienMakerFunction(250, 210, 1000);
+    let firstAlienTop = 140;
+    let firstAlienLeft = 110;
+
+    var player = new playerShipMakerFunction(690, 440, 1000);
+    $('#gameScreen').append(player.$node);
+
+    for(let i = 0; i < 4; i++) {
+      let firstAlien = new alienMakerFunction(firstAlienTop, firstAlienLeft, 1000);
+      $('#gameScreen').append(firstAlien.$node);
+
+      // let secondAlien = new alienMakerFunction(firstAlienTop + 50, firstAlienLeft + 350, 1000);
+      // $('#gameScreen').append(secondAlien.$node);
+      firstAlienLeft += 100;
+    }
+    window.firstAlienRow = 450;
   });
-
 });
+  // make character at the bottom of the screen upon the same event as alien
