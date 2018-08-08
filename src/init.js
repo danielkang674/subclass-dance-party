@@ -57,7 +57,7 @@ $('.spaceInvaderButton').on('click', function (event) {
   let firstAlienTop = 140;
   let firstAlienLeft = 120;
 
-  var player = new playerShipMakerFunction(690, 440, 1000);
+  var player = new playerShipMakerFunction(690, 480, 1000);
   $('#gameScreen').append(player.$node);
   window.dancers.push(player);
 
@@ -73,17 +73,22 @@ $('.spaceInvaderButton').on('click', function (event) {
   }
 
   // Hover color change requirement
-  $('span.user-position.user-triangle').mouseover(function () {
-    $(this).css('border-bottom-color', '#587079');
-    $('span.user-position.user-triangle').mouseout(function () {
-      $(this).css('border-bottom-color', '#fff');
-    });
+  var colorActive = false;
+  $( "span.user-position.user-triangle" ).mouseover(function() {
+    if(!colorActive) {
+      $(this).css("border-bottom-color", "#587079");
+      colorActive = true;
+    } else {
+      $(this).css("border-bottom-color", "#fff");
+      colorActive = false;
+    }
   });
 
   document.addEventListener('keydown', function (event) {
     const key = event.keyCode;
     let player = window.dancers[0];
     if (key === 32) {
+      $('audio#pew')[0].play();
       let bulletMakerFunction = window['Bullet'];
       let bullet = new bulletMakerFunction(player.top - 15, player.left + 5, 50);
       $('#gameScreen').append(bullet.$node);
@@ -129,7 +134,7 @@ $('.massacreButton').on('click', function (event) {
   var alienMakerFunction = window[gameFunctionArray[0]];
   var playerShipMakerFunction = window[gameFunctionArray[1]];
 
-  var player = new playerShipMakerFunction(690, 440, 1000);
+  var player = new playerShipMakerFunction(690, 480, 1000);
   $('#gameScreen').append(player.$node);
   window.dancers.push(player);
 
@@ -147,17 +152,22 @@ $('.massacreButton').on('click', function (event) {
   }
 
   // Hover color change requirement
-  $('span.user-position.user-triangle').mouseover(function () {
-    $(this).css('border-bottom-color', '#957838');
-    $('span.user-position.user-triangle').mouseout(function () {
-      $(this).css('border-bottom-color', '#fff');
-    });
-  });
+  var colorActive = false;
+ $( "span.user-position.user-triangle" ).mouseover(function() {
+   if(!colorActive) {
+     $(this).css("border-bottom-color", "#957838");
+     colorActive = true;
+   } else {
+     $(this).css("border-bottom-color", "#fff");
+     colorActive = false;
+   }
+ });
 
   document.addEventListener('keydown', function (event) {
     const key = event.keyCode;
     let player = window.dancers[0];
     if (key === 32) {
+      $('audio#pew')[0].play();
       let bulletMakerFunction = window['Bullet'];
       let bullet = new bulletMakerFunction(player.top - 15, player.left + 5, 50);
       $('#gameScreen').append(bullet.$node);
