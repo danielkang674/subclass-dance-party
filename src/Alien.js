@@ -1,4 +1,4 @@
-var Alien = function(top, left, timeBetweenSteps) {
+var Alien = function (top, left, timeBetweenSteps) {
 
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<span class="space-invader space-invader-ufo"></span>');
@@ -9,22 +9,20 @@ Alien.prototype.constructor = Alien;
 
 Alien.prototype.oldStep = makeDancer.prototype.step;
 
-Alien.prototype.step = function() {
+Alien.prototype.step = function () {
   this.oldStep.call(this);
-  this.$node.toggle();
 
   let stepRight = 20;
 
-  if (this.left >= 800){
+  if (this.left >= 800) {
     this.left = this.left - 700;
-    // window.firstAlienRow = 200;
     this.top += 100;
   }
   this.left += stepRight;
 
-  if (this.top >= 640){
-    this.$node.hide();
+  if (this.top >= 640) {
+    this.$node.remove();
   }
-  
+
   this.setPosition();
 };
