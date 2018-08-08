@@ -73,7 +73,7 @@ $(document).ready(function() {
   });
 });
   document.addEventListener('keydown', function(event){
-    var player = window.dancers[0];
+    let player = window.dancers[0];
     const key = event.key;
     if(key === 'ArrowLeft' && player.left >= 200){
       player.left -= 90;
@@ -81,6 +81,14 @@ $(document).ready(function() {
     } else if (key === 'ArrowRight' && player.left <= 800){
       player.left += 90;
       player.setPosition();
+    }
+  });
+
+  document.addEventListener('keydown', function(event){
+    const key = event.keyCode;
+    let player = window.dancers[0];
+    if(key === 32){
+      console.log(window.Bullet);
     }
   });
 
